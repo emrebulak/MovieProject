@@ -1,0 +1,35 @@
+:root {
+    --navbar-color : black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav{
+    background-color: var(--navbar-color);
+}
+
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.logo h2{
+    color: #D04043;
+}
