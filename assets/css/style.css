@@ -26,15 +26,16 @@ ul {
     list-style-type: none;
 }
 
-nav {
+.nav {
     background-color: var(--navbar-bg-color);
     height: 60px;
     color: var(--navbar-text-color);
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
-aside {
+.aside {
     background-color: var(--navbar-bg-color);
     color: var(--navbar-text-color);
     height: 100%;
@@ -48,7 +49,7 @@ aside {
     top: 0;
 }
 
-aside i {
+.aside i {
     color: white;
     font-size: 20px;
     cursor: pointer;
@@ -133,6 +134,7 @@ aside i {
     right: 1px;
     cursor: pointer;
     position: absolute;
+    transition: .5s all ease;
 }
 
 .content-wrapper {
@@ -160,7 +162,8 @@ aside i {
 
 .featured-buttons {
     display: flex;
-    column-gap: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .featured-buttons button {
@@ -185,9 +188,16 @@ aside i {
     display: flex;
     align-items: center;
     column-gap: 30px;
+    transform: translateX(0);
+    transition: 1s all ease-in-out;
 }
 
 .movie-item {
+    position: relative;
+}
+
+.movie-list-wrapper {
+    overflow: hidden;
     position: relative;
 }
 
@@ -199,6 +209,7 @@ aside i {
 .movie-item:hover .movie-item-img {
     transform: scale(1.2);
     margin: 0 30px;
+    opacity: .5;
 
 }
 
@@ -259,4 +270,75 @@ aside i {
 
 .movie-item-buttons i:hover {
     opacity: 1;
+}
+
+.arrow {
+    width: 100px;
+    display: flex;
+    font-size: 120px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    opacity: .5;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.container.active {
+    background-color: white;
+}
+
+.nav.active {
+    background-color: white;
+    color: black;
+}
+
+.aside.active {
+    background-color: white;
+}
+
+.aside i.active {
+    color: black;
+}
+
+.toogle.active {
+    background-color: black;
+}
+
+.toogle-ball.active {
+    background-color: white;
+    transform: translateX(-20px);
+}
+
+.movie-list-title.active {
+    color: black;
+}
+
+.movie-list-filter select.active {
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (max-width:800px) {
+    .menu-container {
+        display: none;
+    }
+
+    .featured-title {
+        width: 200px;
+    }
+
+    .featured-content {
+        height: 50vh;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        max-width: 200px;
+        padding: 0;
+    }
+
 }
